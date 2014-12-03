@@ -1,17 +1,23 @@
-@extends('layouts.app')
+@extends('...layouts.app')
 
 @section('content')
 <div class="container">
 <div class="row">
 	<div class="col-sm-8 col-sm-offset-2">
 		<div class="panel panel-default">
-			<div class="panel-heading">Login</div>
+			<div class="panel-heading">Register</div>
 			<div class="panel-body">
 
-				@include('partials.errors.basic')
+				@include('...admin.partials.basic')
 
-				<form class="form-horizontal" role="form" method="POST" action="/auth/login">
+				<form class="form-horizontal" role="form" method="POST" action="/auth/register">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					<div class="form-group">
+						<label for="name" class="col-sm-3 control-label">Name</label>
+						<div class="col-sm-6">
+							<input type="text" id="name" name="name" class="form-control" placeholder="Name" value="{{ old('name') }}">
+						</div>
+					</div>
 					<div class="form-group">
 						<label for="email" class="col-sm-3 control-label">Email</label>
 						<div class="col-sm-6">
@@ -25,20 +31,14 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<div class="col-sm-offset-3 col-sm-6">
-							<div class="checkbox">
-								<label>
-									<input type="checkbox" name="remember"> Remember Me
-								</label>
-							</div>
+						<label for="password" class="col-sm-3 control-label">Confirm Password</label>
+						<div class="col-sm-6">
+							<input type="password" name="password_confirmation" class="form-control" placeholder="Confirm Password">
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="col-sm-offset-3 col-sm-3">
-							<button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-sign-in"></i>Login</button>
-						</div>
-						<div class="col-sm-3">
-							<div id="forgot-password-link" class="text-right"><a href="/password/email">Forgot Your Password?</a></div>
+							<button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-user"></i>Register</button>
 						</div>
 					</div>
 				</form>

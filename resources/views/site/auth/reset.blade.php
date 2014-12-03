@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('...layouts.app')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
 			<div class="panel-heading">Reset Password</div>
 			<div class="panel-body">
 
-				@include('partials.errors.basic')
+				@include('...admin.partials.basic')
 
 				<form class="form-horizontal" role="form" method="POST" action="/password/reset">
 					<input type="hidden" name="_token" value="{{ csrf_token() }}">

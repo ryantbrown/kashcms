@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('...layouts.app')
 
 @section('content')
 <div class="container">
@@ -8,7 +8,7 @@
 			<div class="panel-heading">Forgotten Password</div>
 			<div class="panel-body">
 
-				@include('partials.errors.basic')
+				@include('...admin.partials.basic')
 
 				@if (Session::has('status'))
 					<div class="alert alert-success">
