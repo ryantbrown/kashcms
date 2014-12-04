@@ -111,11 +111,16 @@ return [
 	'providers' => [
 
 		/*
-		 * Application Service Providers...
+		 * Kash Service Provider
 		 */
-		'Kash\Providers\AppServiceProvider',
-		'Kash\Providers\EventServiceProvider',
-		'Kash\Providers\RouteServiceProvider',
+		'Kash\Providers\Admin\KashServiceProvider',
+
+		/*
+		 * Site Service Providers...
+		 */
+		'Kash\Providers\Site\SiteServiceProvider',
+		'Kash\Providers\Site\EventServiceProvider',
+		'Kash\Providers\Site\RouteServiceProvider',
 
 		/*
 		 * Laravel Framework Service Providers...
