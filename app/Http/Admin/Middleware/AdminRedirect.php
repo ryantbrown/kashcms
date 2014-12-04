@@ -4,7 +4,7 @@ use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Routing\Middleware;
 
-class LoggedIn implements Middleware {
+class AdminRedirect implements Middleware {
 
 	protected $auth;
 
@@ -15,15 +15,11 @@ class LoggedIn implements Middleware {
 
 	public function handle($request, Closure $next)
 	{
-		if($this->auth->guest())
-		{
-			if($request->ajax())
-			{
-				return response()->make("Forbidden", 403);
-			}
-
-			return redirect()->route('login');
-		}
+		// If user is logged in as an admin then redirect to dashboard
+		if($this->auth->check() &&
+		  ($this->auth->user() instanceof Kash\Models\Admin\Admin)) {
+			return redirect()->route('dashboard')
+;		}
 
 		return $next($request);
 	}

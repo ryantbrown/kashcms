@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'model' => 'Kash\User',
+	'model' => 'Kash\Models\Site\User',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -59,7 +59,7 @@ return [
 	*/
 
 	'password' => [
-		'email' => 'emails.auth.password',
+		'email' => 'site.emails.auth.password',
 		'table' => 'password_resets',
 		'expire' => 60,
 	],

@@ -15,7 +15,14 @@ class Admin implements Middleware {
 
 	public function handle($request, Closure $next)
 	{
-		if($this->auth->guest() || (!$this->auth->user() instanceof Kash\Models\Admin\Admin))
+		// If not logged in then send to login page
+		if($this->auth->guest())
+		{
+			return redirect()->route('login');
+		}
+
+		// If logged in but not Admin then 403 their ass
+		if(!$this->auth->user() instanceof Kash\Models\Admin\Admin)
 		{
 			return response()->make("Forbidden", 403);
 		}

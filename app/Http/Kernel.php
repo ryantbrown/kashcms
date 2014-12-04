@@ -25,11 +25,11 @@ class Kernel extends HttpKernel {
 	 */
 	protected $routeMiddleware = [
 
-		// Kash middleware
-		'logged.in' => 'Kash\Http\Admin\Middleware\LoggedIn',
+		// Kash route middleware
 		'admin' => 'Kash\Http\Admin\Middleware\Admin',
+		'admin.redirect' => 'Kash\Http\Admin\Middleware\AdminRedirect',
 
-		// Site Middleware
+		// Site route middleware
 		'auth' => 'Kash\Http\Site\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'Kash\Http\Site\Middleware\RedirectIfAuthenticated',

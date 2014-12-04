@@ -9,7 +9,6 @@ abstract class Controller extends BaseController {
 
 	public function __construct()
 	{
-		$this->middleware('logged.in');
 		$this->middleware('admin');
 	}
 
