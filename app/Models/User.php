@@ -1,4 +1,4 @@
-<?php namespace Kash\Models\Site;
+<?php namespace Kash\Models;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model as Eloquent;

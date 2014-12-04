@@ -1,4 +1,4 @@
-<?php namespace Kash\Models\Admin;
+<?php namespace Kash\Components\Base;
 
 use Illuminate\Database\Eloquent\Model as Eloquent;
 
